@@ -1,17 +1,16 @@
 # Design Decisions and Thoughts
 
-# My Thoughts
-
 ## Frontend
 
-- Added Components folder to organize different components being added (searchbar, cardlist)
-- Installed TailwindCSS, axios
+- Added Components folder to organize different components being added (SearchBar, CardList)
+- Installed TailwindCSS, axios, react-icons
 
 ### Searchbar
 
 - Basic react functional component that contains input which is a searchbar that tracks the 'searchTerm' inside of it
 - The biggest challenge was delaying the user from submitting by a second which is something I had to figure how to do.
 - This was done by the use of 'delayTerm' which sets a time for one second every time the searchTerm field has an active state and then clears it after 1000ms.
+- Added a clear button (the X) for user experience.
 
 ### CardList
 
