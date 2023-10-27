@@ -1,22 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function SearchBar(props) {
-  const [searchText, setSearchText] = useState('');
+function SearchBar({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [delayTerm, setDelayTerm] = useState(searchTerm);
 
-  const handleSearch = () => {
-    
-  };
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDelayTerm(searchTerm);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [searchTerm]);
+
+  useEffect(() => {
+    if (delayTerm) {
+      onSearch(delayTerm);
+    }
+  }, [delayTerm, onSearch]);
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search for Magic cards..."
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-    </div>
+    <input
+    className="w-full p-3 border rounded-md mb-5"
+      type="text"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      placeholder="Search for a card..."
+    />
   );
 }
 
