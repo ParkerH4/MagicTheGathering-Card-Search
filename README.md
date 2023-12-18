@@ -2,6 +2,9 @@
 
 Welcome to the Magic Card Search project! 🧙✨ This project was initially a coding assignment given to me during an interview process. I found the task interesting and decided to expand on it, turning it into a full-fledged project for display in my portfolio.
 
+![image](https://github.com/ParkerH4/MagicTheGathering-Card-Search/assets/113216014/2d8291fb-8c74-4050-96e6-49d59449b2dc)
+
+
 ## Overview
 
 The goal of this project is to create a basic full-stack application using TypeScript, React, Node, Express, and integrating with the Scryfall API for Magic cards. The project includes a backend that serves as a REST endpoint to fetch Magic cards based on a user-provided search string. The frontend, built with React, enables users to search for cards using a user-friendly interface and displays card information such as images, names, set names, numbers, and rarities.
